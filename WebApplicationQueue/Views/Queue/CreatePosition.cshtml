@@ -1,0 +1,31 @@
+﻿@model WebApplicationQueue.Entities.Position
+    @{
+    ViewData["Title"] = "Create Position";
+    }
+
+    <form method="post" asp-action="CreatePosition">
+        <div class="border p-3 mt-4">
+            <div class="row pb-2">
+                <h2 class="text-primary">Create Position</h2>
+                <hr />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Requester"></label>
+                <input asp-for="Requester" class="form-control" />
+                <span asp-validation-for="Requester" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+            <a asp-controller="Queue" asp-action="GetQueue" class="btn btn-secondary" style="width:150px">Back to the Queue</a>
+        </div>
+    </form>
+
+@section Scripts { 
+    @{ 
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

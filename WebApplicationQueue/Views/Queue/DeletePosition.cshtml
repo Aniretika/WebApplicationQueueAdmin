@@ -1,0 +1,36 @@
+﻿@model WebApplicationQueue.Entities.Position
+@{
+    ViewData["Title"] = "Delete Position";
+}
+
+<form method="post" asp-action="DeletePosition">
+    <input asp-for="Id" hidden/>
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Position</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Requester"></label>
+            <input asp-for="Requester" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="NumberInTheQueue"></label>
+            <input asp-for="NumberInTheQueue" disabled class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+        <a asp-controller="Queue" asp-action="GetQueue" class="btn btn-secondary" style="width:150px">Back to the Queue</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
